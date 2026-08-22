@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Angola Oportunidades</title>
+<meta name="description" content="Empregos, concursos, bolsas, motas, carros, casas e classificados em Angola.">
+<style>
+:root{--navy:#061a35;--red:#e50914;--yellow:#ffc400;--blue:#1264d8;--green:#079447;--bg:#f5f7fa;--text:#101828;--muted:#667085}
+*{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+.header{background:var(--navy);color:#fff;padding:14px 5%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px}.logo .flag{font-size:28px}.logo span{color:var(--yellow)}
+.nav{display:flex;align-items:center;gap:14px}.btn{border:0;border-radius:9px;padding:12px 18px;font-weight:700;cursor:pointer}.btn-outline{background:transparent;color:#fff;border:1px solid #fff}.btn-red{background:var(--red);color:#fff}.menu{font-size:28px;background:none;border:0;color:#fff}
+.hero{padding:55px 5% 70px;background:linear-gradient(120deg,#dcecff,#fff);text-align:center}
+.hero h1{font-size:clamp(30px,5vw,56px);margin:0 0 12px}.hero h1 span{color:var(--red)}.hero p{font-size:20px;color:#344054}
+.search{max-width:1050px;margin:25px auto -105px;background:#fff;padding:14px;border-radius:16px;box-shadow:0 10px 30px #0002;display:grid;grid-template-columns:1.5fr 1fr auto;gap:10px}
+.input,.select{padding:16px;border:1px solid #d0d5dd;border-radius:10px;font-size:16px;background:#fff}
+.container{max-width:1200px;margin:120px auto 50px;padding:0 20px}
+.section-title{display:flex;justify-content:space-between;align-items:center;margin:30px 0 18px}.section-title h2{margin:0}.link{color:var(--blue);font-weight:700}
+.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.cat{background:#fff;border-radius:14px;padding:22px 10px;text-align:center;box-shadow:0 2px 10px #0000000a;cursor:pointer}.cat .icon{font-size:35px}.cat strong{display:block;margin-top:8px}.cat small{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 3px 14px #0001}.photo{height:180px;background:linear-gradient(135deg,#d7e8ff,#fff);display:flex;align-items:center;justify-content:center;font-size:55px}.card-body{padding:16px}.tag{display:inline-block;padding:5px 9px;border-radius:7px;background:#e8f1ff;color:#1458b8;font-size:12px;font-weight:800}.price{font-size:20px;font-weight:800;color:var(--green);margin:8px 0}.meta{color:var(--muted);font-size:14px;margin:7px 0}.card .btn{width:100%;margin-top:8px}
+.cta{margin:35px 0;background:#fff3bf;border-radius:16px;padding:28px;display:flex;justify-content:space-between;align-items:center;gap:20px}.cta h2{margin:0 0 6px}
+.latest{display:grid;grid-template-columns:1fr 1fr;gap:12px}.latest-item{background:#fff;padding:16px;border-radius:12px;display:flex;gap:14px;align-items:center}.latest-icon{font-size:28px}
+.footer{background:var(--navy);color:#fff;text-align:center;padding:35px 20px;margin-top:50px}.bottom{display:none}
+@media(max-width:800px){.header{padding:12px 16px}.nav .btn-outline{display:none}.hero{padding:35px 18px 65px}.search{grid-template-columns:1fr;margin-bottom:-95px}.container{margin-top:105px}.categories{grid-template-columns:repeat(2,1fr)}.cards{grid-template-columns:1fr}.latest{grid-template-columns:1fr}.cta{flex-direction:column;align-items:flex-start}.bottom{display:flex;position:fixed;bottom:0;left:0;right:0;background:var(--navy);color:#fff;justify-content:space-around;padding:10px;z-index:20}.bottom button{background:none;border:0;color:#fff;font-size:13px}.bottom b{display:block;font-size:22px}.footer{padding-bottom:80px}}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="logo"><div class="flag">🇦🇴</div><div>Angola <span>Oportunidades</span><small style="display:block;font-size:10px;color:#d0d5dd">O seu portal de oportunidades em Angola</small></div></div>
+  <nav class="nav"><button class="btn btn-outline">👤 Entrar / Cadastrar</button><button class="menu">☰</button></nav>
+</header>
+
+<section class="hero">
+  <h1>Encontre as melhores oportunidades em <span>Angola</span></h1>
+  <p>Empregos, concursos, bolsas, casas, motas, carros e muito mais, num só lugar.</p>
+  <form class="search" onsubmit="searchSite(event)">
+    <input id="q" class="input" placeholder="🔎  O que você procura?">
+    <select id="prov" class="select"><option>Todas as províncias</option><option>Luanda</option><option>Huíla</option><option>Namibe</option><option>Benguela</option><option>Huambo</option><option>Cabinda</option></select>
+    <button class="btn btn-red">🔎 Pesquisar</button>
+  </form>
+</section>
+
+<main class="container">
+  <div class="section-title"><h2>Categorias principais</h2><span class="link">Ver todas ›</span></div>
+  <div class="categories">
+    <div class="cat"><div class="icon">💼</div><strong>Empregos</strong><small>Vagas de trabalho</small></div>
+    <div class="cat"><div class="icon">📄</div><strong>Concursos</strong><small>Concursos públicos</small></div>
+    <div class="cat"><div class="icon">🎓</div><strong>Bolsas de estudo</strong><small>Estudo e futuro</small></div>
+    <div class="cat"><div class="icon">📚</div><strong>Cursos</strong><small>Formações</small></div>
+    <div class="cat"><div class="icon">🏍️</div><strong>Motas</strong><small>Compra e venda</small></div>
+    <div class="cat"><div class="icon">🚗</div><strong>Carros</strong><small>Compra e venda</small></div>
+    <div class="cat"><div class="icon">🏠</div><strong>Casas</strong><small>Arrendar e vender</small></div>
+    <div class="cat"><div class="icon">📱</div><strong>Telefones</strong><small>Eletrónicos</small></div>
+  </div>
+
+  <div class="section-title"><h2>🔥 Oportunidades em destaque</h2><span class="link">Ver todos ›</span></div>
+  <div class="cards">
+    <article class="card"><div class="photo">💼</div><div class="card-body"><span class="tag">EMPREGO</span><h3>Vaga de Motorista</h3><p>Empresa privada admite motorista com experiência.</p><div class="meta">📍 Luanda</div><button class="btn btn-red" onclick="showMessage('Detalhes da vaga')">Ver detalhes ›</button></div></article>
+    <article class="card"><div class="photo">🏍️</div><div class="card-body"><span class="tag">MOTA</span><h3>Honda CG 125 – 2023</h3><p>Mota em bom estado, documentos em dia.</p><div class="price">450.000 Kz</div><div class="meta">📍 Huíla</div><button class="btn btn-red" onclick="showMessage('Detalhes do anúncio da mota')">Ver anúncio ›</button></div></article>
+    <article class="card"><div class="photo">🏠</div><div class="card-body"><span class="tag">CASA</span><h3>Casa T3 para arrendar</h3><p>Casa nova, bem localizada, com água e luz.</p><div class="price">180.000 Kz / mês</div><div class="meta">📍 Benguela</div><button class="btn btn-red" onclick="showMessage('Detalhes da casa')">Ver anúncio ›</button></div></article>
+  </div>
+
+  <div class="cta"><div><h2>📢 Publique o seu anúncio ou oportunidade</h2><div>Divulgue o seu produto, serviço ou vaga de emprego.</div></div><button class="btn" style="background:var(--yellow)" onclick="showMessage('Formulário de publicação será criado na próxima etapa.')">＋ Anunciar agora</button></div>
+
+  <div class="section-title"><h2>Últimas oportunidades</h2><span class="link">Ver todas ›</span></div>
+  <div class="latest">
+    <div class="latest-item"><span class="latest-icon">💼</span><div><b>Vaga para Assistente Administrativo</b><div class="meta">Luanda · Hoje</div></div></div>
+    <div class="latest-item"><span class="latest-icon">📄</span><div><b>Concurso no Ministério da Educação</b><div class="meta">Luanda · Hoje</div></div></div>
+    <div class="latest-item"><span class="latest-icon">🎓</span><div><b>Bolsa de Mestrado em Portugal</b><div class="meta">Benguela · Hoje</div></div></div>
+    <div class="latest-item"><span class="latest-icon">🏠</span><div><b>Apartamento T2 para arrendar</b><div class="meta">Luanda · Ontem</div></div></div>
+  </div>
+</main>
+
+<footer class="footer"><b>🇦🇴 Angola Oportunidades</b><p>O seu portal de oportunidades e classificados em Angola.</p><small>© 2026 Angola Oportunidades</small></footer>
+<div class="bottom"><button>🏠<b>Início</b></button><button>🔎<b>Pesquisar</b></button><button onclick="showMessage('Publicação')">➕<b>Anunciar</b></button><button>👤<b>Minha conta</b></button></div>
+<script>
+function searchSite(e){e.preventDefault();const q=document.getElementById('q').value||'todas as oportunidades';const p=document.getElementById('prov').value;alert('Pesquisa: '+q+' — '+p);}
+function showMessage(msg){alert(msg+'\\n\\nEsta função será ligada ao sistema real na próxima etapa.');}
+</script>
+</body>
+</html>

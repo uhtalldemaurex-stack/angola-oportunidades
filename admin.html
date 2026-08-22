@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel do Administrador — Angola Oportunidades</title>
+<style>
+:root{--navy:#061a35;--red:#e50914;--yellow:#ffc400;--green:#079447;--bg:#f4f6f8;--text:#101828;--muted:#667085;--line:#e4e7ec}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+button,input,select{font:inherit}.login{min-height:100vh;display:grid;place-items:center;padding:20px;background:linear-gradient(135deg,#061a35,#173c69)}
+.login-card{width:min(420px,100%);background:#fff;border-radius:18px;padding:30px;box-shadow:0 20px 60px #0004}.brand{text-align:center;font-size:25px;font-weight:800;margin-bottom:25px}.brand span{color:var(--yellow)}
+.field{margin:14px 0}.field label{display:block;font-weight:700;margin-bottom:7px}.field input,.field select{width:100%;padding:13px;border:1px solid #d0d5dd;border-radius:9px}
+.btn{border:0;border-radius:9px;padding:12px 16px;font-weight:700;cursor:pointer}.red{background:var(--red);color:#fff}.dark{background:var(--navy);color:#fff}.green{background:var(--green);color:#fff}.gray{background:#eef2f6;color:#344054}
+.error{color:var(--red);font-size:14px;display:none;margin-top:10px}
+.app{display:none;min-height:100vh}.sidebar{position:fixed;left:0;top:0;bottom:0;width:250px;background:var(--navy);color:#fff;padding:22px 15px}.side-brand{font-size:21px;font-weight:800;padding:10px}.side-brand span{color:var(--yellow)}.nav-item{display:block;width:100%;text-align:left;background:none;border:0;color:#d0d5dd;padding:13px;border-radius:9px;margin:5px 0;cursor:pointer}.nav-item:hover,.nav-item.active{background:#ffffff18;color:#fff}.main{margin-left:250px;padding:25px;max-width:1500px}.top{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:25px}.top h1{margin:0}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.stat{background:#fff;padding:20px;border-radius:14px;border:1px solid var(--line)}.stat small{color:var(--muted)}.stat strong{display:block;font-size:30px;margin-top:7px}.panel{background:#fff;border:1px solid var(--line);border-radius:14px;margin-top:22px;padding:20px}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:15px}.toolbar input,.toolbar select{padding:11px;border:1px solid #d0d5dd;border-radius:8px}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:800px}th,td{text-align:left;padding:13px;border-bottom:1px solid var(--line);vertical-align:middle}th{background:#f8fafc}.badge{display:inline-block;padding:5px 8px;border-radius:20px;font-size:12px;font-weight:800}.pending{background:#fff3bf;color:#7a5700}.approved{background:#d9fbe7;color:#087443}.rejected{background:#ffe1e3;color:#b42318}.actions{display:flex;gap:6px;flex-wrap:wrap}.hidden{display:none}.modal{position:fixed;inset:0;background:#0008;display:none;align-items:center;justify-content:center;padding:20px;z-index:50}.modal-card{background:#fff;border-radius:15px;width:min(600px,100%);padding:22px}.modal-card h2{margin-top:0}.close{float:right;background:none;border:0;font-size:24px;cursor:pointer}.notice{padding:12px;border-radius:9px;background:#eef4ff;color:#175cd3;margin-bottom:15px}
+@media(max-width:900px){.sidebar{width:210px}.main{margin-left:210px}.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){.sidebar{position:static;width:auto;min-height:auto;display:flex;overflow:auto;gap:5px;padding:8px}.side-brand{display:none}.nav-item{white-space:nowrap;width:auto}.main{margin-left:0;padding:15px}.stats{grid-template-columns:1fr 1fr}.top{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+
+<section id="login" class="login">
+  <div class="login-card">
+    <div class="brand">🇦🇴 Angola <span>Oportunidades</span></div>
+    <h2>Painel do Administrador</h2>
+    <p style="color:#667085">Acesso reservado à administração do site.</p>
+    <div class="field"><label>Utilizador</label><input id="user" autocomplete="username" placeholder="admin"></div>
+    <div class="field"><label>Palavra-passe</label><input id="pass" type="password" autocomplete="current-password" placeholder="••••••••"></div>
+    <button class="btn red" style="width:100%" onclick="login()">Entrar</button>
+    <div id="loginError" class="error">Credenciais incorretas.</div>
+    <p style="font-size:12px;color:#98a2b3;margin-top:18px">Protótipo: as credenciais abaixo servem apenas para demonstração local.</p>
+  </div>
+</section>
+
+<section id="app" class="app">
+<aside class="sidebar">
+  <div class="side-brand">🇦🇴 Angola <span>Oportunidades</span></div>
+  <button class="nav-item active" onclick="showSection('dashboard',this)">📊 Dashboard</button>
+  <button class="nav-item" onclick="showSection('anuncios',this)">📋 Anúncios</button>
+  <button class="nav-item" onclick="showSection('utilizadores',this)">👥 Utilizadores</button>
+  <button class="nav-item" onclick="showSection('categorias',this)">🗂️ Categorias</button>
+  <button class="nav-item" onclick="showSection('denuncias',this)">🚩 Denúncias</button>
+  <button class="nav-item" onclick="showSection('definicoes',this)">⚙️ Definições</button>
+  <button class="nav-item" onclick="logout()">↪️ Sair</button>
+</aside>
+
+<main class="main">
+  <section id="dashboard">
+    <div class="top"><div><h1>Dashboard</h1><p style="color:var(--muted)">Visão geral do Angola Oportunidades</p></div><button class="btn dark" onclick="openModal('newAd')">＋ Novo anúncio</button></div>
+    <div class="stats">
+      <div class="stat"><small>Anúncios publicados</small><strong id="statTotal">0</strong></div>
+      <div class="stat"><small>Aguardando aprovação</small><strong id="statPending">0</strong></div>
+      <div class="stat"><small>Utilizadores</small><strong id="statUsers">0</strong></div>
+      <div class="stat"><small>Denúncias abertas</small><strong id="statReports">0</strong></div>
+    </div>
+    <div class="panel"><h2>Atividade recente</h2><div id="activity"></div></div>
+  </section>
+
+  <section id="anuncios" class="hidden">
+    <div class="top"><div><h1>Gestão de anúncios</h1><p style="color:var(--muted)">Aprove, rejeite, edite ou remova anúncios.</p></div><button class="btn red" onclick="openModal('newAd')">＋ Criar anúncio</button></div>
+    <div class="panel">
+      <div class="toolbar">
+        <input id="searchAds" placeholder="Pesquisar anúncio..." oninput="renderAds()">
+        <select id="filterStatus" onchange="renderAds()"><option value="all">Todos os estados</option><option value="pending">Pendentes</option><option value="approved">Aprovados</option><option value="rejected">Rejeitados</option></select>
+        <select id="filterCat" onchange="renderAds()"><option value="all">Todas as categorias</option><option>Empregos</option><option>Concursos</option><option>Bolsas de estudo</option><option>Motas</option><option>Carros</option><option>Casas</option><option>Telefones</option></select>
+      </div>
+      <div class="table-wrap"><table><thead><tr><th>Anúncio</th><th>Categoria</th><th>Local</th><th>Utilizador</th><th>Estado</th><th>Ações</th></tr></thead><tbody id="adsTable"></tbody></table></div>
+    </div>
+  </section>
+
+  <section id="utilizadores" class="hidden">
+    <div class="top"><div><h1>Utilizadores</h1><p style="color:var(--muted)">Contas registadas na plataforma.</p></div></div>
+    <div class="panel"><div class="table-wrap"><table><thead><tr><th>Nome</th><th>Email</th><th>Província</th><th>Data</th><th>Estado</th><th>Ações</th></tr></thead><tbody id="usersTable"></tbody></table></div></div>
+  </section>
+
+  <section id="categorias" class="hidden">
+    <div class="top"><div><h1>Categorias</h1><p style="color:var(--muted)">Organize os tipos de oportunidades e classificados.</p></div><button class="btn red" onclick="addCategory()">＋ Nova categoria</button></div>
+    <div class="panel"><div id="categoriesList"></div></div>
+  </section>
+
+  <section id="denuncias" class="hidden">
+    <div class="top"><div><h1>Denúncias</h1><p style="color:var(--muted)">Analise anúncios denunciados pelos utilizadores.</p></div></div>
+    <div class="panel"><div class="table-wrap"><table><thead><tr><th>Anúncio</th><th>Motivo</th><th>Data</th><th>Estado</th><th>Ações</th></tr></thead><tbody id="reportsTable"></tbody></table></div></div>
+  </section>
+
+  <section id="definicoes" class="hidden">
+    <div class="top"><div><h1>Definições</h1><p style="color:var(--muted)">Configurações básicas do painel.</p></div></div>
+    <div class="panel">
+      <div class="notice">Nesta versão, os dados de demonstração ficam guardados no navegador usando localStorage. Para colocar o site em produção, a próxima etapa é ligar este painel a uma base de dados e autenticação segura.</div>
+      <div class="field"><label>Nome do site</label><input id="siteName" value="Angola Oportunidades"></div>
+      <div class="field"><label>Modo de aprovação de anúncios</label><select><option>Aprovar manualmente</option><option>Publicar automaticamente</option></select></div>
+      <button class="btn green" onclick="saveSettings()">Guardar definições</button>
+    </div>
+  </section>
+</main>
+</section>
+
+<div id="modal" class="modal"><div class="modal-card"><button class="close" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
+
+<script>
+const defaultData={
+ ads:[
+  {id:1,title:'Vaga de Motorista',cat:'Empregos',location:'Luanda',user:'Transportes Angola',status:'pending'},
+  {id:2,title:'Honda CG 125 – 2023',cat:'Motas',location:'Huíla',user:'Manuel João',status:'approved'},
+  {id:3,title:'Casa T3 para arrendar',cat:'Casas',location:'Benguela',user:'Ana Maria',status:'approved'},
+  {id:4,title:'Concurso Público — Educação',cat:'Concursos',location:'Luanda',user:'Admin',status:'approved'}
+ ],
+ users:[
+  {name:'Manuel João',email:'manuel@example.com',prov:'Huíla',date:'18/08/2026',status:'Ativo'},
+  {name:'Ana Maria',email:'ana@example.com',prov:'Benguela',date:'17/08/2026',status:'Ativo'},
+  {name:'Carlos Pedro',email:'carlos@example.com',prov:'Luanda',date:'16/08/2026',status:'Ativo'}
+ ],
+ reports:[
+  {id:1,ad:'Telefone anunciado',reason:'Preço suspeito',date:'18/08/2026',status:'Aberta'}
+ ],
+ categories:['Empregos','Concursos','Bolsas de estudo','Cursos','Motas','Carros','Casas','Telefones','Outros produtos']
+};
+function data(){return JSON.parse(localStorage.getItem('aoAdminData')||JSON.stringify(defaultData))}
+function save(d){localStorage.setItem('aoAdminData',JSON.stringify(d))}
+function login(){
+ const u=document.getElementById('user').value,p=document.getElementById('pass').value;
+ if(u==='admin'&&p==='admin123'){sessionStorage.setItem('aoAdmin','1');document.getElementById('login').style.display='none';document.getElementById('app').style.display='block';renderAll()}
+ else document.getElementById('loginError').style.display='block';
+}
+function logout(){sessionStorage.removeItem('aoAdmin');location.reload()}
+function showSection(id,el){
+ document.querySelectorAll('main section').forEach(x=>x.classList.add('hidden'));
+ document.getElementById(id).classList.remove('hidden');
+ document.querySelectorAll('.nav-item').forEach(x=>x.classList.remove('active')); if(el)el.classList.add('active');
+ renderAll();
+}
+function renderAll(){const d=data();document.getElementById('statTotal').textContent=d.ads.filter(a=>a.status==='approved').length;document.getElementById('statPending').textContent=d.ads.filter(a=>a.status==='pending').length;document.getElementById('statUsers').textContent=d.users.length;document.getElementById('statReports').textContent=d.reports.filter(r=>r.status==='Aberta').length;renderAds();renderUsers();renderCats();renderReports();document.getElementById('activity').innerHTML=d.ads.slice().reverse().slice(0,5).map(a=>`<p>📌 <b>${a.title}</b> — ${a.status==='pending'?'aguarda aprovação':a.status==='approved'?'aprovado':'rejeitado'}</p>`).join('')}
+function renderAds(){
+ const d=data(),q=(document.getElementById('searchAds')?.value||'').toLowerCase(),s=document.getElementById('filterStatus')?.value||'all',c=document.getElementById('filterCat')?.value||'all';
+ let rows=d.ads.filter(a=>(s==='all'||a.status===s)&&(c==='all'||a.cat===c)&&(`${a.title} ${a.user} ${a.location}`.toLowerCase().includes(q)));
+ document.getElementById('adsTable').innerHTML=rows.map(a=>`<tr><td><b>${a.title}</b></td><td>${a.cat}</td><td>📍 ${a.location}</td><td>${a.user}</td><td><span class="badge ${a.status}">${a.status==='pending'?'Pendente':a.status==='approved'?'Aprovado':'Rejeitado'}</span></td><td class="actions">${a.status!=='approved'?`<button class="btn green" onclick="setAd(${a.id},'approved')">Aprovar</button>`:''}${a.status!=='rejected'?`<button class="btn gray" onclick="setAd(${a.id},'rejected')">Rejeitar</button>`:''}<button class="btn gray" onclick="deleteAd(${a.id})">Excluir</button></td></tr>`).join('')||'<tr><td colspan="6">Nenhum anúncio encontrado.</td></tr>';
+}
+function setAd(id,status){const d=data();const a=d.ads.find(x=>x.id===id);if(a)a.status=status;save(d);renderAll()}
+function deleteAd(id){if(!confirm('Excluir este anúncio?'))return;const d=data();d.ads=d.ads.filter(a=>a.id!==id);save(d);renderAll()}
+function renderUsers(){const d=data();document.getElementById('usersTable').innerHTML=d.users.map((u,i)=>`<tr><td><b>${u.name}</b></td><td>${u.email}</td><td>${u.prov}</td><td>${u.date}</td><td><span class="badge approved">${u.status}</span></td><td><button class="btn gray" onclick="removeUser(${i})">Remover</button></td></tr>`).join('')}
+function removeUser(i){if(!confirm('Remover este utilizador?'))return;const d=data();d.users.splice(i,1);save(d);renderAll()}
+function renderCats(){const d=data();document.getElementById('categoriesList').innerHTML=d.categories.map((c,i)=>`<div style="display:flex;justify-content:space-between;padding:14px;border-bottom:1px solid var(--line)"><b>${c}</b><button class="btn gray" onclick="removeCat(${i})">Excluir</button></div>`).join('')}
+function addCategory(){const c=prompt('Nome da nova categoria:');if(!c)return;const d=data();d.categories.push(c);save(d);renderAll()}
+function removeCat(i){const d=data();if(confirm('Excluir categoria?')){d.categories.splice(i,1);save(d);renderAll()}}
+function renderReports(){const d=data();document.getElementById('reportsTable').innerHTML=d.reports.map(r=>`<tr><td>${r.ad}</td><td>${r.reason}</td><td>${r.date}</td><td><span class="badge ${r.status==='Aberta'?'pending':'approved'}">${r.status}</span></td><td>${r.status==='Aberta'?`<button class="btn green" onclick="closeReport(${r.id})">Resolver</button>`:''}</td></tr>`).join('')||'<tr><td colspan="5">Nenhuma denúncia.</td></tr>'}
+function closeReport(id){const d=data();const r=d.reports.find(x=>x.id===id);if(r)r.status='Resolvida';save(d);renderAll()}
+function openModal(type){if(type!=='newAd')return;document.getElementById('modalContent').innerHTML=`<h2>Criar anúncio</h2><div class="field"><label>Título</label><input id="newTitle" placeholder="Ex.: Vaga de emprego"></div><div class="field"><label>Categoria</label><select id="newCat">${data().categories.map(c=>`<option>${c}</option>`).join('')}</select></div><div class="field"><label>Província</label><input id="newLoc" placeholder="Luanda"></div><div class="field"><label>Publicador</label><input id="newUser" placeholder="Nome ou empresa"></div><button class="btn red" onclick="createAd()">Criar e enviar para aprovação</button>`;document.getElementById('modal').style.display='flex'}
+function closeModal(){document.getElementById('modal').style.display='none'}
+function createAd(){const t=document.getElementById('newTitle').value.trim(),cat=document.getElementById('newCat').value,loc=document.getElementById('newLoc').value.trim(),u=document.getElementById('newUser').value.trim();if(!t||!loc||!u){alert('Preencha todos os campos.');return}const d=data();d.ads.push({id:Date.now(),title:t,cat,location:loc,user:u,status:'pending'});save(d);closeModal();renderAll()}
+function saveSettings(){alert('Definições guardadas neste protótipo.')}
+if(sessionStorage.getItem('aoAdmin')==='1'){document.getElementById('login').style.display='none';document.getElementById('app').style.display='block';renderAll()}
+</script>
+</body>
+</html>
