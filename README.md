@@ -1,23 +1,24 @@
-# Angola Oportunidades 🇦🇴
+# Angola Oportunidades V3
 
 Categorias principais:
 - Empregos
 - Concursos
 - Bolsas de estudo
 - Cursos
-- 🏨 Hospedagem
-- 🚗 Arrendamento de carros
-- 🏍️ Arrendamento de motas
 - Motas
 - Carros
 - Casas
 - Telefones
+- Hospedagem
+- Aluguer de carros
+- Aluguer de motas
+- Aluguer de salões de festas
 - Outros produtos
 
-O sistema permite contas, publicação de anúncios, upload de fotos e aprovação pelo administrador.
+Inclui cadastro/login, anúncios, upload de imagens, pesquisa, painel administrativo e aprovação de anúncios.
 
 Administrador inicial:
-Email: admin@angolaoportunidades.ao
-Palavra-passe: Admin@12345
+admin@angolaoportunidades.ao
+Admin@12345
 
-Antes de produção, altere a palavra-passe e a SECRET_KEY e configure HTTPS, base de dados de produção, CSRF, backups e armazenamento seguro de imagens.
+Antes de publicar, altere a palavra-passe e SECRET_KEY.
