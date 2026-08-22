@@ -1,40 +1,23 @@
-ANGOLA OPORTUNIDADES — BACKEND FUNCIONAL
+# Angola Oportunidades 🇦🇴
 
-Tecnologia:
-- Python + Flask
-- SQLite
-- Sessões
-- Hash de palavras-passe
-- Upload de imagens
-- Moderação administrativa
-- Pesquisa e filtros
-- Denúncias
+Categorias principais:
+- Empregos
+- Concursos
+- Bolsas de estudo
+- Cursos
+- 🏨 Hospedagem
+- 🚗 Arrendamento de carros
+- 🏍️ Arrendamento de motas
+- Motas
+- Carros
+- Casas
+- Telefones
+- Outros produtos
 
-COMO EXECUTAR NO COMPUTADOR:
-1. Instale Python 3.11+.
-2. Abra o terminal nesta pasta.
-3. Execute: python -m venv .venv
-4. Ative o ambiente virtual.
-5. Execute: pip install -r requirements.txt
-6. Execute: python app.py
-7. Abra: http://127.0.0.1:5000
+O sistema permite contas, publicação de anúncios, upload de fotos e aprovação pelo administrador.
 
-ADMINISTRADOR INICIAL:
+Administrador inicial:
 Email: admin@angolaoportunidades.ao
 Palavra-passe: Admin@12345
 
-MUDE A PALAVRA-PASSE E A SECRET_KEY ANTES DE PUBLICAR NA INTERNET.
-
-NOTA:
-Este pacote é uma base funcional para desenvolvimento. Para produção ainda devem ser adicionados:
-- PostgreSQL ou outro banco de produção
-- HTTPS
-- proteção CSRF
-- rate limiting
-- recuperação de palavra-passe
-- verificação de email/telefone
-- armazenamento de imagens externo
-- backups
-- logs e monitorização
-- pagamentos para anúncios destacados
-- políticas de privacidade e termos de uso
+Antes de produção, altere a palavra-passe e a SECRET_KEY e configure HTTPS, base de dados de produção, CSRF, backups e armazenamento seguro de imagens.
