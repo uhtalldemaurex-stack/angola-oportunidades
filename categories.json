@@ -1,0 +1,205 @@
+[
+  {
+    "id": "empregos",
+    "name": "Empregos",
+    "icon": "briefcase",
+    "subcategories": [
+      "Ofertas de emprego",
+      "Trabalho temporário",
+      "Trabalho remoto",
+      "Estágios",
+      "Serviços profissionais",
+      "Motoristas",
+      "Domésticas",
+      "Outros"
+    ]
+  },
+  {
+    "id": "concursos-oportunidades",
+    "name": "Concursos e Oportunidades",
+    "icon": "megaphone",
+    "subcategories": [
+      "Concursos públicos",
+      "Concursos privados",
+      "Vagas de instituições",
+      "Programas de estágio",
+      "Oportunidades de negócio",
+      "Outros"
+    ]
+  },
+  {
+    "id": "educacao",
+    "name": "Educação",
+    "icon": "graduation-cap",
+    "subcategories": [
+      "Bolsas de estudo",
+      "Cursos",
+      "Formações profissionais",
+      "Explicações e aulas particulares",
+      "Instituições de ensino",
+      "Material escolar"
+    ]
+  },
+  {
+    "id": "imoveis",
+    "name": "Imóveis",
+    "icon": "house",
+    "subcategories": [
+      "Casas para venda",
+      "Casas para aluguer",
+      "Apartamentos",
+      "Terrenos",
+      "Escritórios",
+      "Lojas",
+      "Armazéns",
+      "Espaços comerciais",
+      "Quartos"
+    ]
+  },
+  {
+    "id": "festas-eventos",
+    "name": "Aluguer de espaços para festas e eventos",
+    "icon": "party-popper",
+    "subcategories": [
+      "Salões de festas",
+      "Espaços para casamentos",
+      "Espaços para aniversários",
+      "Quintais para eventos",
+      "Espaços para confraternizações",
+      "Espaços para reuniões",
+      "Espaços para batizados",
+      "Espaços com piscina",
+      "Outros espaços para eventos"
+    ]
+  },
+  {
+    "id": "veiculos",
+    "name": "Veículos",
+    "icon": "car",
+    "subcategories": [
+      "Carros",
+      "Motas",
+      "Camiões",
+      "Carrinhas",
+      "Autocarros",
+      "Peças e acessórios",
+      "Outros veículos"
+    ]
+  },
+  {
+    "id": "aluguer-veiculos",
+    "name": "Aluguer de veículos",
+    "icon": "key-round",
+    "subcategories": [
+      "Aluguer de carros",
+      "Aluguer de motas",
+      "Aluguer de carrinhas",
+      "Viaturas para eventos",
+      "Viaturas com motorista"
+    ]
+  },
+  {
+    "id": "hospedagem",
+    "name": "Hospedagem",
+    "icon": "hotel",
+    "subcategories": [
+      "Hotéis",
+      "Hospedarias",
+      "Pensões",
+      "Apartamentos",
+      "Quartos",
+      "Casas de férias",
+      "Resorts",
+      "Outros"
+    ]
+  },
+  {
+    "id": "eletronicos",
+    "name": "Eletrónicos",
+    "icon": "smartphone",
+    "subcategories": [
+      "Telefones",
+      "Computadores",
+      "Tablets",
+      "Televisores",
+      "Consolas",
+      "Acessórios",
+      "Outros eletrónicos"
+    ]
+  },
+  {
+    "id": "produtos-comercio",
+    "name": "Produtos e Comércio",
+    "icon": "shopping-bag",
+    "subcategories": [
+      "Roupa",
+      "Calçados",
+      "Cosméticos",
+      "Produtos de beleza",
+      "Móveis",
+      "Eletrodomésticos",
+      "Material escolar",
+      "Alimentos",
+      "Outros produtos"
+    ]
+  },
+  {
+    "id": "servicos",
+    "name": "Serviços",
+    "icon": "wrench",
+    "subcategories": [
+      "Construção",
+      "Canalização",
+      "Eletricidade",
+      "Informática",
+      "Reparação de telemóveis",
+      "Mecânica",
+      "Fotografia e vídeo",
+      "Design gráfico",
+      "Limpeza",
+      "Catering",
+      "Decoração de eventos",
+      "Transporte",
+      "Outros serviços"
+    ]
+  },
+  {
+    "id": "saude-beleza",
+    "name": "Saúde e Beleza",
+    "icon": "heart-pulse",
+    "subcategories": [
+      "Salões de beleza",
+      "Barbearias",
+      "Estética",
+      "Massagem",
+      "Clínicas",
+      "Farmácias",
+      "Outros"
+    ]
+  },
+  {
+    "id": "agricultura-pecuaria",
+    "name": "Agricultura e Pecuária",
+    "icon": "sprout",
+    "subcategories": [
+      "Terrenos agrícolas",
+      "Animais",
+      "Produtos agrícolas",
+      "Máquinas agrícolas",
+      "Ferramentas",
+      "Outros"
+    ]
+  },
+  {
+    "id": "outros",
+    "name": "Outros",
+    "icon": "ellipsis",
+    "subcategories": [
+      "Anúncios diversos",
+      "Doações",
+      "Parcerias",
+      "Negócios",
+      "Outros"
+    ]
+  }
+]

@@ -1,0 +1,59 @@
+[
+  {
+    "id": "title",
+    "label": "Título do anúncio",
+    "type": "text",
+    "required": true
+  },
+  {
+    "id": "description",
+    "label": "Descrição",
+    "type": "textarea",
+    "required": true
+  },
+  {
+    "id": "price",
+    "label": "Preço",
+    "type": "number",
+    "required": true
+  },
+  {
+    "id": "province",
+    "label": "Província",
+    "type": "select",
+    "required": true
+  },
+  {
+    "id": "municipality",
+    "label": "Município",
+    "type": "text",
+    "required": true
+  },
+  {
+    "id": "neighborhood",
+    "label": "Bairro",
+    "type": "text"
+  },
+  {
+    "id": "phone",
+    "label": "Contacto",
+    "type": "tel",
+    "required": true
+  },
+  {
+    "id": "images",
+    "label": "Fotos",
+    "type": "images",
+    "max": 10
+  },
+  {
+    "id": "condition",
+    "label": "Condição",
+    "type": "select",
+    "options": [
+      "Novo",
+      "Usado",
+      "Outro"
+    ]
+  }
+]

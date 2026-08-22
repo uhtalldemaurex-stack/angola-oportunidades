@@ -1,0 +1,75 @@
+{
+  "category_id": "festas-eventos",
+  "fields": [
+    {
+      "id": "space_type",
+      "label": "Tipo de espaço",
+      "type": "select",
+      "options": [
+        "Salão",
+        "Quintal",
+        "Restaurante",
+        "Piscina",
+        "Espaço aberto",
+        "Casa de eventos",
+        "Outro"
+      ]
+    },
+    {
+      "id": "capacity",
+      "label": "Capacidade de pessoas",
+      "type": "number",
+      "min": 1
+    },
+    {
+      "id": "pricing_unit",
+      "label": "Preço por",
+      "type": "select",
+      "options": [
+        "Hora",
+        "Dia",
+        "Evento"
+      ]
+    },
+    {
+      "id": "available_date",
+      "label": "Data disponível",
+      "type": "date"
+    },
+    {
+      "id": "parking",
+      "label": "Tem estacionamento?",
+      "type": "boolean"
+    },
+    {
+      "id": "tables_chairs",
+      "label": "Tem mesas e cadeiras?",
+      "type": "boolean"
+    },
+    {
+      "id": "kitchen",
+      "label": "Tem cozinha?",
+      "type": "boolean"
+    },
+    {
+      "id": "bathrooms",
+      "label": "Tem casas de banho?",
+      "type": "boolean"
+    },
+    {
+      "id": "sound_system",
+      "label": "Tem sistema de som?",
+      "type": "boolean"
+    },
+    {
+      "id": "decoration",
+      "label": "Tem decoração?",
+      "type": "boolean"
+    },
+    {
+      "id": "pool",
+      "label": "Tem piscina?",
+      "type": "boolean"
+    }
+  ]
+}
